@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2019-11-16T19:19:28Z" product-name="skitourenroutenlist">
+		<header/>
+		<body>
+			<trans-unit id="routenname.description">
+				<source>routenname</source>
+			</trans-unit>
+			<trans-unit id="lawinengefahr.description">
+				<source>lawinengefahr</source>
+			</trans-unit>
+			<trans-unit id="gesamtanspruch.description">
+				<source>gesamtanspruch</source>
+			</trans-unit>
+			<trans-unit id="skitechnischebewertung.description">
+				<source>skitechnischebewertung</source>
+			</trans-unit>
+			<trans-unit id="hoehenmeter.description">
+				<source>hoehenmeter</source>
+			</trans-unit>
+			<trans-unit id="gehzeit.description">
+				<source>gehzeit</source>
+			</trans-unit>
+			<trans-unit id="schoenheit.description">
+				<source>schoenheit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

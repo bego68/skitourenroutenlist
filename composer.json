@@ -1,0 +1,23 @@
+{
+    "name": "golf/skitourenroutenlist",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Golf\\Skitourenroutenlist\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Golf\\Skitourenroutenlist\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "golf/skitourenroutenlist": "self.version",
+        "typo3-ter/skitourenroutenlist": "self.version"
+    }
+}

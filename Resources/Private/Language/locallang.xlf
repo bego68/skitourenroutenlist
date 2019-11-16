@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2019-11-16T19:19:28Z" product-name="skitourenroutenlist">
+		<header/>
+		<body>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.routenname">
+				<source>Routenname</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.lawinengefahr">
+				<source>Lawinengefahr</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.gesamtanspruch">
+				<source>Gesamtanspruch</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung">
+				<source>Skitechnischebewertung</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.hoehenmeter">
+				<source>Hoehenmeter</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.gehzeit">
+				<source>Gehzeit</source>
+			</trans-unit>
+			<trans-unit id="tx_skitourenroutenlist_domain_model_route.schoenheit">
+				<source>Schoenheit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
