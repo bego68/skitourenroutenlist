@@ -35,6 +35,6 @@ class MapsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function listAction()
     {
         $maps = $this->mapsRepository->findAll();
-        $this->view->assign('maps', $maps);
+        $this->view->assign('mapss', $maps);
     }
 }
