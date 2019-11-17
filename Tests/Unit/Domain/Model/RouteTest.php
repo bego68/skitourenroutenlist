@@ -5,6 +5,7 @@ namespace Golf\Skitourenroutenlist\Tests\Unit\Domain\Model;
  * Test case.
  *
  * @author Hubertus Golf <info@berti-golf.de>
+ * @author Markus Stadler <mail@stadler-markus.de>
  */
 class RouteTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
@@ -196,6 +197,185 @@ class RouteTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             12,
             'schoenheit',
             $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getBeliebtheitReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getBeliebtheit()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setBeliebtheitForIntSetsBeliebtheit()
+    {
+        $this->subject->setBeliebtheit(12);
+
+        self::assertAttributeEquals(
+            12,
+            'beliebtheit',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getHangexpositionReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getHangexposition()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setHangexpositionForStringSetsHangexposition()
+    {
+        $this->subject->setHangexposition('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'hangexposition',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getMountainregionNameReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getMountainregionName()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setMountainregionNameForStringSetsMountainregionName()
+    {
+        $this->subject->setMountainregionName('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'mountainregionName',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getMountainNameReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getMountainName()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setMountainNameForStringSetsMountainName()
+    {
+        $this->subject->setMountainName('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'mountainName',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getMountainHeightReturnsInitialValueForInt()
+    {
+        self::assertSame(
+            0,
+            $this->subject->getMountainHeight()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setMountainHeightForIntSetsMountainHeight()
+    {
+        $this->subject->setMountainHeight(12);
+
+        self::assertAttributeEquals(
+            12,
+            'mountainHeight',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getMountainLatitudeReturnsInitialValueForFloat()
+    {
+        self::assertSame(
+            0.0,
+            $this->subject->getMountainLatitude()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setMountainLatitudeForFloatSetsMountainLatitude()
+    {
+        $this->subject->setMountainLatitude(3.14159265);
+
+        self::assertAttributeEquals(
+            3.14159265,
+            'mountainLatitude',
+            $this->subject,
+            '',
+            0.000000001
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getMountainLongitudeReturnsInitialValueForFloat()
+    {
+        self::assertSame(
+            0.0,
+            $this->subject->getMountainLongitude()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setMountainLongitudeForFloatSetsMountainLongitude()
+    {
+        $this->subject->setMountainLongitude(3.14159265);
+
+        self::assertAttributeEquals(
+            3.14159265,
+            'mountainLongitude',
+            $this->subject,
+            '',
+            0.000000001
         );
     }
 }

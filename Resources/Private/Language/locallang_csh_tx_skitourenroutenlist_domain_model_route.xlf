@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2019-11-16T19:19:28Z" product-name="skitourenroutenlist">
+	<file source-language="de" datatype="plaintext" original="messages" date="2019-11-17T14:58:04Z" product-name="skitourenroutenlist">
 		<header/>
 		<body>
 			<trans-unit id="routenname.description">
@@ -23,6 +23,27 @@
 			</trans-unit>
 			<trans-unit id="schoenheit.description">
 				<source>schoenheit</source>
+			</trans-unit>
+			<trans-unit id="beliebtheit.description">
+				<source>beliebtheit</source>
+			</trans-unit>
+			<trans-unit id="hangexposition.description">
+				<source>hangexposition</source>
+			</trans-unit>
+			<trans-unit id="mountainregion_name.description">
+				<source>mountainregionName</source>
+			</trans-unit>
+			<trans-unit id="mountain_name.description">
+				<source>mountainName</source>
+			</trans-unit>
+			<trans-unit id="mountain_height.description">
+				<source>mountainHeight</source>
+			</trans-unit>
+			<trans-unit id="mountain_latitude.description">
+				<source>mountainLatitude</source>
+			</trans-unit>
+			<trans-unit id="mountain_longitude.description">
+				<source>mountainLongitude</source>
 			</trans-unit>
 		</body>
 	</file>

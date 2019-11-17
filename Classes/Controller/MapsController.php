@@ -14,18 +14,18 @@ namespace Golf\Skitourenroutenlist\Controller;
  *
  ***/
 /**
- * RouteController
+ * MapsController
  */
-class RouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class MapsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * routeRepository
+     * mapsRepository
      * 
-     * @var \Golf\Skitourenroutenlist\Domain\Repository\RouteRepository
+     * @var \Golf\Skitourenroutenlist\Domain\Repository\MapsRepository
      * @inject
      */
-    protected $routeRepository = null;
+    protected $mapsRepository = null;
 
     /**
      * action list
@@ -34,7 +34,7 @@ class RouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $routes = $this->routeRepository->findAll();
-        $this->view->assign('routes', $routes);
+        $maps = $this->mapsRepository->findAll();
+        $this->view->assign('maps', $maps);
     }
 }

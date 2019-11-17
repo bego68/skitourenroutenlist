@@ -48,10 +48,10 @@ Skitouren-Routen-List
     2019
 
 :Author:
-    Hubertus Golf
+    Hubertus Golf, Markus Stadler
 
 :Email:
-    info@berti-golf.de
+    info@berti-golf.de, mail@stadler-markus.de
 
 :License:
    This extension documentation is published under the `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons) license

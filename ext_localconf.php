@@ -13,7 +13,21 @@ call_user_func(
             ],
             // non-cacheable actions
             [
-                'Route' => ''
+                'Route' => '',
+                'Maps' => ''
+            ]
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'Golf.Skitourenroutenlist',
+            'Skitourenkarten',
+            [
+                'Maps' => 'list'
+            ],
+            // non-cacheable actions
+            [
+                'Route' => '',
+                'Maps' => ''
             ]
         );
 
@@ -31,6 +45,15 @@ call_user_func(
                             list_type = skitourenroutenlist_skitourenlist
                         }
                     }
+                    skitourenkarten {
+                        iconIdentifier = skitourenroutenlist-plugin-skitourenkarten
+                        title = LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_skitourenkarten.name
+                        description = LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_skitourenkarten.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = skitourenroutenlist_skitourenkarten
+                        }
+                    }
                 }
                 show = *
             }
@@ -42,6 +65,12 @@ call_user_func(
 				'skitourenroutenlist-plugin-skitourenlist',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 				['source' => 'EXT:skitourenroutenlist/Resources/Public/Icons/user_plugin_skitourenlist.svg']
+			);
+		
+			$iconRegistry->registerIcon(
+				'skitourenroutenlist-plugin-skitourenkarten',
+				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+				['source' => 'EXT:skitourenroutenlist/Resources/Public/Icons/user_plugin_skitourenkarten.svg']
 			);
 		
     }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2019-11-17T14:58:04Z" product-name="skitourenroutenlist">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="ean.description">
+				<source>ean</source>
+			</trans-unit>
+			<trans-unit id="kartenreihe.description">
+				<source>kartenreihe</source>
+			</trans-unit>
+			<trans-unit id="kartennummer.description">
+				<source>kartennummer</source>
+			</trans-unit>
+			<trans-unit id="typ.description">
+				<source>typ</source>
+			</trans-unit>
+			<trans-unit id="massstab.description">
+				<source>massstab</source>
+			</trans-unit>
+			<trans-unit id="preis.description">
+				<source>preis</source>
+			</trans-unit>
+			<trans-unit id="verlag.description">
+				<source>verlag</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>link</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

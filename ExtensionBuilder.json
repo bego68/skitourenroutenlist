@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    99,
-                    93
+                    98,
+                    92.5
                 ]
             },
             "name": "New Model Object",
@@ -109,6 +109,222 @@
                             "propertyName": "schoenheit",
                             "propertyType": "Integer",
                             "uid": "72537522997"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "beliebtheit",
+                            "propertyType": "Integer",
+                            "uid": "1241014483160"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "hangexposition",
+                            "propertyType": "String",
+                            "uid": "815540628564"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mountainregionName",
+                            "propertyType": "String",
+                            "uid": "528897135865"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mountainName",
+                            "propertyType": "String",
+                            "uid": "387895331116"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mountainHeight",
+                            "propertyType": "Integer",
+                            "uid": "1021444830705"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mountainLatitude",
+                            "propertyType": "Float",
+                            "uid": "569604207644"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "mountainLongitude",
+                            "propertyType": "Float",
+                            "uid": "1255185933584"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    420,
+                    104.5
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Maps",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "79182648341"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1421255104470"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "ean",
+                            "propertyType": "Integer",
+                            "uid": "685874704399"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "kartenreihe",
+                            "propertyType": "String",
+                            "uid": "1421830348625"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "kartennummer",
+                            "propertyType": "String",
+                            "uid": "985927257615"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "typ",
+                            "propertyType": "String",
+                            "uid": "364650722480"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "massstab",
+                            "propertyType": "String",
+                            "uid": "1474283270907"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "preis",
+                            "propertyType": "String",
+                            "uid": "92976150302"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "verlag",
+                            "propertyType": "String",
+                            "uid": "1144736330446"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "link",
+                            "propertyType": "String",
+                            "uid": "1295157676646"
                         }
                     ]
                 },
@@ -135,14 +351,20 @@
         },
         "extensionKey": "skitourenroutenlist",
         "name": "Skitouren-Routen-List",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "skitourenroutenlist",
+        "originalVendorName": "Golf",
         "persons": [
             {
                 "company": "Volleyballserver",
                 "email": "info@berti-golf.de",
                 "name": "Hubertus Golf",
                 "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "mail@stadler-markus.de",
+                "name": "Markus Stadler",
+                "role": "Product Manager"
             }
         ],
         "plugins": [
@@ -155,13 +377,23 @@
                 "description": "",
                 "key": "skitourenlist",
                 "name": "Skitourenlist"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Maps => list",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "description": "",
+                "key": "skitourenkarten",
+                "name": "Skitouren Karten"
             }
         ],
         "vendorName": "Golf"
     },
     "wires": [],
     "log": {
-        "last_modified": "2019-11-16 07:19",
+        "last_modified": "2019-11-17 02:58",
         "extension_builder_version": "9.10.2",
         "be_user": " (1)"
     }

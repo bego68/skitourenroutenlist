@@ -14,8 +14,8 @@ namespace Golf\Skitourenroutenlist\Domain\Repository;
  *
  ***/
 /**
- * The repository for Routes
+ * The repository for Maps
  */
-class RouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class MapsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 }

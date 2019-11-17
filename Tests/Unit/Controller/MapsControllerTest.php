@@ -7,17 +7,17 @@ namespace Golf\Skitourenroutenlist\Tests\Unit\Controller;
  * @author Hubertus Golf <info@berti-golf.de>
  * @author Markus Stadler <mail@stadler-markus.de>
  */
-class RouteControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
+class MapsControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \Golf\Skitourenroutenlist\Controller\RouteController
+     * @var \Golf\Skitourenroutenlist\Controller\MapsController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Golf\Skitourenroutenlist\Controller\RouteController::class)
+        $this->subject = $this->getMockBuilder(\Golf\Skitourenroutenlist\Controller\MapsController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -31,22 +31,22 @@ class RouteControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function listActionFetchesAllRoutesFromRepositoryAndAssignsThemToView()
+    public function listActionFetchesAllMapssFromRepositoryAndAssignsThemToView()
     {
 
-        $allRoutes = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+        $allMapss = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $routeRepository = $this->getMockBuilder(\Golf\Skitourenroutenlist\Domain\Repository\RouteRepository::class)
+        $mapsRepository = $this->getMockBuilder(\Golf\Skitourenroutenlist\Domain\Repository\MapsRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();
-        $routeRepository->expects(self::once())->method('findAll')->will(self::returnValue($allRoutes));
-        $this->inject($this->subject, 'routeRepository', $routeRepository);
+        $mapsRepository->expects(self::once())->method('findAll')->will(self::returnValue($allMapss));
+        $this->inject($this->subject, 'mapsRepository', $mapsRepository);
 
         $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
-        $view->expects(self::once())->method('assign')->with('routes', $allRoutes);
+        $view->expects(self::once())->method('assign')->with('mapss', $allMapss);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();

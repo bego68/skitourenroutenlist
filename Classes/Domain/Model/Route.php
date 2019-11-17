@@ -10,6 +10,7 @@ namespace Golf\Skitourenroutenlist\Domain\Model;
  * LICENSE.txt file that was distributed with this source code.
  *
  *  (c) 2019 Hubertus Golf <info@berti-golf.de>, Volleyballserver
+ *           Markus Stadler <mail@stadler-markus.de>
  *
  ***/
 /**
@@ -66,6 +67,55 @@ class Route extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      */
     protected $schoenheit = 0;
+
+    /**
+     * beliebtheit
+     * 
+     * @var int
+     */
+    protected $beliebtheit = 0;
+
+    /**
+     * hangexposition
+     * 
+     * @var string
+     */
+    protected $hangexposition = '';
+
+    /**
+     * mountainregionName
+     * 
+     * @var string
+     */
+    protected $mountainregionName = '';
+
+    /**
+     * mountainName
+     * 
+     * @var string
+     */
+    protected $mountainName = '';
+
+    /**
+     * mountainHeight
+     * 
+     * @var int
+     */
+    protected $mountainHeight = 0;
+
+    /**
+     * mountainLatitude
+     * 
+     * @var float
+     */
+    protected $mountainLatitude = 0.0;
+
+    /**
+     * mountainLongitude
+     * 
+     * @var float
+     */
+    protected $mountainLongitude = 0.0;
 
     /**
      * Returns the routenname
@@ -212,5 +262,152 @@ class Route extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setSchoenheit($schoenheit)
     {
         $this->schoenheit = $schoenheit;
+    }
+
+    /**
+     * Returns the beliebtheit
+     * 
+     * @return int $beliebtheit
+     */
+    public function getBeliebtheit()
+    {
+        return $this->beliebtheit;
+    }
+
+    /**
+     * Sets the beliebtheit
+     * 
+     * @param int $beliebtheit
+     * @return void
+     */
+    public function setBeliebtheit($beliebtheit)
+    {
+        $this->beliebtheit = $beliebtheit;
+    }
+
+    /**
+     * Returns the hangexposition
+     * 
+     * @return string $hangexposition
+     */
+    public function getHangexposition()
+    {
+        return $this->hangexposition;
+    }
+
+    /**
+     * Sets the hangexposition
+     * 
+     * @param string $hangexposition
+     * @return void
+     */
+    public function setHangexposition($hangexposition)
+    {
+        $this->hangexposition = $hangexposition;
+    }
+
+    /**
+     * Returns the mountainregionName
+     * 
+     * @return string $mountainregionName
+     */
+    public function getMountainregionName()
+    {
+        return $this->mountainregionName;
+    }
+
+    /**
+     * Sets the mountainregionName
+     * 
+     * @param string $mountainregionName
+     * @return void
+     */
+    public function setMountainregionName($mountainregionName)
+    {
+        $this->mountainregionName = $mountainregionName;
+    }
+
+    /**
+     * Returns the mountainName
+     * 
+     * @return string $mountainName
+     */
+    public function getMountainName()
+    {
+        return $this->mountainName;
+    }
+
+    /**
+     * Sets the mountainName
+     * 
+     * @param string $mountainName
+     * @return void
+     */
+    public function setMountainName($mountainName)
+    {
+        $this->mountainName = $mountainName;
+    }
+
+    /**
+     * Returns the mountainHeight
+     * 
+     * @return int $mountainHeight
+     */
+    public function getMountainHeight()
+    {
+        return $this->mountainHeight;
+    }
+
+    /**
+     * Sets the mountainHeight
+     * 
+     * @param int $mountainHeight
+     * @return void
+     */
+    public function setMountainHeight($mountainHeight)
+    {
+        $this->mountainHeight = $mountainHeight;
+    }
+
+    /**
+     * Returns the mountainLatitude
+     * 
+     * @return float $mountainLatitude
+     */
+    public function getMountainLatitude()
+    {
+        return $this->mountainLatitude;
+    }
+
+    /**
+     * Sets the mountainLatitude
+     * 
+     * @param float $mountainLatitude
+     * @return void
+     */
+    public function setMountainLatitude($mountainLatitude)
+    {
+        $this->mountainLatitude = $mountainLatitude;
+    }
+
+    /**
+     * Returns the mountainLongitude
+     * 
+     * @return float $mountainLongitude
+     */
+    public function getMountainLongitude()
+    {
+        return $this->mountainLongitude;
+    }
+
+    /**
+     * Sets the mountainLongitude
+     * 
+     * @param float $mountainLongitude
+     * @return void
+     */
+    public function setMountainLongitude($mountainLongitude)
+    {
+        $this->mountainLongitude = $mountainLongitude;
     }
 }
