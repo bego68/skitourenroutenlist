@@ -17,8 +17,7 @@
 
 		<f:flashMessages />
 
-		<table id="routen-list"  class="tx_skitourenroutenlist" >
-		   <thead>
+		<table  class="tx_skitourenroutenlist" >
 			<tr>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.lawinengefahr" /></th>
@@ -35,7 +34,7 @@
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_latitude" /></th>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_longitude" /></th>
 			</tr>
-		 </thead>
+
 			<f:for each="{routes}" as="route">
 				<tr>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
@@ -58,8 +57,8 @@
 		</table>
 <script>
 	$(function() {
-		$("#routen-list").bootgrid();
-		$("#routen-list").bootgrid("search", "WS");
+		$("#map-table").bootgrid();
+		$("#map-table").bootgrid("search", "Alpenvereinskarte");
 	});
 </script>
 	</f:section>

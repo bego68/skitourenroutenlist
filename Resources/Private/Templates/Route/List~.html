@@ -13,12 +13,11 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-
+		<h1>Listing for Route</h1>
 
 		<f:flashMessages />
 
-		<table id="routen-list"  class="tx_skitourenroutenlist" >
-		   <thead>
+		<table  class="tx_skitourenroutenlist" >
 			<tr>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.lawinengefahr" /></th>
@@ -34,8 +33,10 @@
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_height" /></th>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_latitude" /></th>
 				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_longitude" /></th>
+				<th> </th>
+				<th> </th>
 			</tr>
-		 </thead>
+
 			<f:for each="{routes}" as="route">
 				<tr>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
@@ -52,15 +53,12 @@
 					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainHeight}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainLatitude}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainLongitude}</f:link.action></td>
-
+					<td><f:link.action action="edit" arguments="{route : route}">Edit</f:link.action></td>
+					<td><f:link.action action="delete" arguments="{route : route}">Delete</f:link.action></td>
 				</tr>
 			</f:for>
 		</table>
-<script>
-	$(function() {
-		$("#routen-list").bootgrid();
-		$("#routen-list").bootgrid("search", "WS");
-	});
-</script>
+
+		<f:link.action action="new">New Route</f:link.action>
 	</f:section>
 </html>
