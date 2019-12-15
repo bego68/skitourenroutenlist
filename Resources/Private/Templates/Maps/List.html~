@@ -1,7 +1,30 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:layout name="Default" />
 	<f:section name="content">
-                
+	<h2 id="searchword">{settings.searchword}</h2>
+<f:format.raw>
+
+
+	<script type="text/javascript">
+	$(function() {
+		$("#map-table").bootgrid({
+		 	formatters: {
+		 		"shop": function (column, row){
+		 			for (var shop in row) {
+		 				if (row.hasOwnProperty(shop)) {
+		 					var str =
+		 					row.shop.split("|||");
+		 						return "<a href=\" " + str[0] + "\" >" + str[1] + "</a>";
+						}
+					}
+				}
+			}
+		});
+		$("#map-table").bootgrid("search",$("#searchword").html());
+	 });
+
+</script>
+</f:format.raw>              
 		<table id="map-table" class="tx_skitourenroutenlist table table-condensed table-hover table-striped" >
 		    <thead>
 			<tr>
@@ -30,24 +53,5 @@
 		    </tbody>
 		</table>
 
-<script>
-	$(function() {
-		$("#map-table").bootgrid({
-		 	formatters: {
-		 		"shop": function (column, row){
-		 			for (var shop in row) {
-		 				if (row.hasOwnProperty(shop)) {
-		 					var str =
-		 					row.shop.split("|||");
-		 						return "<a href=\" " + str[0] + "\" >" + str[1] + "</a>";
-						}
-					}
-				}
-			}
-		});
-		$("#map-table").bootgrid("search","");
-	 });
-
-</script>
 	</f:section>
 </html>
