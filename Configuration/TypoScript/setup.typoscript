@@ -87,3 +87,10 @@ plugin.tx_skitourenroutenlist._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+#Filter für Maps
+plugin.tx_skitourenroutenlist.settings.maps.filter {
+  verlag = Verlag
+  kartenreihe = Kartenreihe
+  massstab = Maßstab 
+  typ = Typ
+}
