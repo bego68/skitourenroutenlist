@@ -39,7 +39,7 @@ class RouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         If ($filter['gschoenheit_max'] > 0) $constraints[] = $query->lessThan('schoenheit', $filter['schoenheit_max']);
         If ($filter['beliebtheit_min'] > 0) $constraints[] = $query->greaterThan('beliebtheit', $filter['beliebtheit_min']);
         If ($filter['beliebtheit_max'] > 0) $constraints[] = $query->lessThan('beliebtheit', $filter['beliebtheit_max']);
-        If ($filter['skitechnischebewertung'] != '') $constraints[] = $query->lessThan('skitechnischebewertung', $filter['skitechnischebewertung']);
+        If ($filter['skitechnischebewertung'] != '') $constraints[] = $query->equals('skitechnischebewertung', $filter['skitechnischebewertung']);
 
 
 
