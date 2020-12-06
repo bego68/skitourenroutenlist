@@ -12,7 +12,7 @@
 		 				if (row.hasOwnProperty(shop)) {
 		 					var str =
 		 					row.shop.split("|||");
-		 						return "<a href=\" " + str[0] + "\" >" + str[1] + "</a>";
+		 						return "<a target=\"_blank\" href=\" " + str[0] + "\" >" + str[1] + " </a>";
 						}
 					}
 				}
@@ -39,7 +39,7 @@
 			<f:for each="{mapss}" as="maps">
 				<tr>
 					<td>{maps.kartenreihe}</td>
-					<td class="text-center">{maps.kartennummer}.</td>
+					<td class="text-center">{maps.kartennummer}</td>
 					<td>{maps.name}</td>
 					<td>{maps.typ}</td>
 					<td class="text-center">{maps.massstab}</td>
