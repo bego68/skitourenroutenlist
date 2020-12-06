@@ -21,27 +21,40 @@
 		   <thead>
 			<tr>
 				<th data-column-id="routenname" ><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
-				<th data-column-id="lawinengefahr" align="center" title="<f:translate key='tx_skitourenroutenlist_domain_model_route.lawinengefahr' />">LG</th>
-				<th data-column-id="gesamtanspruch" ><f:translate key="tx_skitourenroutenlist_domain_model_route.gesamtanspruch" /></th>
-				<th  data-column-id="skitechnischebewertung" ><f:translate key="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung" /></th>
-				<th  data-column-id="hoehenmeter" data-type="numeric" ><f:translate key="tx_skitourenroutenlist_domain_model_route.hoehenmeter" /></th>
-				<th data-column-id="gehzeit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.gehzeit" /></th>
+
+				<th data-column-id="gesamtanspruch" align="center" >Anspruch</th>
+				<th  data-column-id="skitechnischebewertung" >Ski</th>
+				<th  data-column-id="hoehenmeter" data-type="numeric" >HM</th>
+				<th data-column-id="gehzeit" >Zeit</th>
 				<th data-column-id="schoenheit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.schoenheit" /></th>
 				<th data-column-id="beliebtheit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.beliebtheit" /></th>
-				<th data-column-id="hangexposition"><f:translate key="tx_skitourenroutenlist_domain_model_route.hangexposition" /></th>
+				<th data-column-id="hangexposition">Exposition</th>
+				<th data-column-id="lawinengefahr">LG</th>
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
 				<tr>
-					<td class="text-left"><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.lawinengefahr}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.gesamtanspruch}</f:link.action></td>
+					<td class="text-left"><f:link.action action="show" extensionName="tx_skitourenrouten" pageUid="2392" arguments="{route : route}"> {route.routenname}					</f:link.action></td>
+
+					<td class="text-center" align="right"><f:link.action action="show" arguments="{route : route}"> <f:switch expression="{route.gesamtanspruch}">
+                   <f:case value="10">1</f:case>
+                   <f:case value="15">1-2</f:case>
+                   <f:case value="20">2</f:case>
+                   <f:case value="25">2-3</f:case>
+                   <f:case value="30">3</f:case>
+                   <f:case value="35">3-4</f:case>
+                   <f:case value="40">4</f:case>
+                   <f:case value="45">4-5</f:case>
+                   <f:case value="50">5</f:case> 
+	        </f:switch></f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.skitechnischebewertung}</f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.hoehenmeter}</f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.gehzeit}</f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.schoenheit}</f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.beliebtheit}</f:link.action></td>
 					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.hangexposition}</f:link.action></td>
+					<td class="lawinengefahr lawinengefahr{route.lawinengefahr}"><span> </span></td>
+					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.lawinengefahr}</f:link.action></td>
 				</tr>
 			</f:for>
 		</table>
