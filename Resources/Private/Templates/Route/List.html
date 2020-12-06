@@ -20,7 +20,7 @@
 		<table id="routen-list"  class="tx_skitourenroutenlist" >
 		   <thead>
 			<tr>
-				<th data-column-id="routenname"><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
+				<th data-column-id="routenname" class="text-left"><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
 				<th data-column-id="lawinengefahr"><f:translate key="tx_skitourenroutenlist_domain_model_route.lawinengefahr" /></th>
 				<th data-column-id="gesamtanspruch"><f:translate key="tx_skitourenroutenlist_domain_model_route.gesamtanspruch" /></th>
 				<th  data-column-id="skitechnischebewertung"><f:translate key="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung" /></th>
@@ -29,16 +29,11 @@
 				<th data-column-id="schoenheit"><f:translate key="tx_skitourenroutenlist_domain_model_route.schoenheit" /></th>
 				<th data-column-id="beliebtheit"><f:translate key="tx_skitourenroutenlist_domain_model_route.beliebtheit" /></th>
 				<th data-column-id="hangexposition"><f:translate key="tx_skitourenroutenlist_domain_model_route.hangexposition" /></th>
-				<th data-column-id="mountainregion_name"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountainregion_name" /></th>
-				<th data-column-id="mountain_name"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_name" /></th>
-				<th data-column-id="mountain_height"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_height" /></th>
-				<th data-column-id="mountain_latitude"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_latitude" /></th>
-				<th data-column-id="mountain_longitude"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_longitude" /></th>
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
 				<tr>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
+					<td class="text-left"><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.lawinengefahr}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.gesamtanspruch}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.skitechnischebewertung}</f:link.action></td>
@@ -47,12 +42,6 @@
 					<td><f:link.action action="show" arguments="{route : route}"> {route.schoenheit}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.beliebtheit}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{route : route}"> {route.hangexposition}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainregionName}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainName}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainHeight}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainLatitude}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{route : route}"> {route.mountainLongitude}</f:link.action></td>
-
 				</tr>
 			</f:for>
 		</table>
