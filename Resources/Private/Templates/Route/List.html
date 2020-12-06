@@ -20,20 +20,20 @@
 		<table id="routen-list"  class="tx_skitourenroutenlist" >
 		   <thead>
 			<tr>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.lawinengefahr" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.gesamtanspruch" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.hoehenmeter" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.gehzeit" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.schoenheit" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.beliebtheit" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.hangexposition" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountainregion_name" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_name" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_height" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_latitude" /></th>
-				<th><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_longitude" /></th>
+				<th data-column-id="routenname"><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
+				<th data-column-id="lawinengefahr"><f:translate key="tx_skitourenroutenlist_domain_model_route.lawinengefahr" /></th>
+				<th data-column-id="gesamtanspruch"><f:translate key="tx_skitourenroutenlist_domain_model_route.gesamtanspruch" /></th>
+				<th  data-column-id="skitechnischebewertung"><f:translate key="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung" /></th>
+				<th  data-column-id="hoehenmeter"><f:translate key="tx_skitourenroutenlist_domain_model_route.hoehenmeter" /></th>
+				<th data-column-id="gehzeit"><f:translate key="tx_skitourenroutenlist_domain_model_route.gehzeit" /></th>
+				<th data-column-id="schoenheit"><f:translate key="tx_skitourenroutenlist_domain_model_route.schoenheit" /></th>
+				<th data-column-id="beliebtheit"><f:translate key="tx_skitourenroutenlist_domain_model_route.beliebtheit" /></th>
+				<th data-column-id="hangexposition"><f:translate key="tx_skitourenroutenlist_domain_model_route.hangexposition" /></th>
+				<th data-column-id="mountainregion_name"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountainregion_name" /></th>
+				<th data-column-id="mountain_name"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_name" /></th>
+				<th data-column-id="mountain_height"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_height" /></th>
+				<th data-column-id="mountain_latitude"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_latitude" /></th>
+				<th data-column-id="mountain_longitude"><f:translate key="tx_skitourenroutenlist_domain_model_route.mountain_longitude" /></th>
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
@@ -59,7 +59,8 @@
 <script>
 	$(function() {
 		$("#routen-list").bootgrid();
-		$("#routen-list").bootgrid("search", "");
+		$("#routen-list").bootgrid("search",'');
+
 	});
 </script>
 	</f:section>
