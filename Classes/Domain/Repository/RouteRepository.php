@@ -29,17 +29,17 @@ class RouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         //print_r($filter);
         $query = $this->createQuery();
         $constraints[] =  $query->greaterThan('uid',0);
-        If ($filter['hoehenmeter_min'] > 0) $constraints[] = $query->greaterThan('hoehenmeter', $filter['hoehenmeter_min']);
-        If ($filter['hoehenmeter_max'] > 0) $constraints[] = $query->lessThan('hoehenmeter', $filter['hoehenmeter_max']);
-        If ($filter['lawinengefahr_min'] > 0) $constraints[] = $query->greaterThan('lawinengefahr', $filter['lawinengefahr_min']);
-        If ($filter['lawinengefahr_max'] > 0) $constraints[] = $query->lessThan('lawinengefahr', $filter['lawinengefahr_max']);
-        If ($filter['gesamtanspruch_min'] > 0) $constraints[] = $query->greaterThan('gesamtanspruch', $filter['gesamtanspruch_min']);
-        If ($filter['gesamtanspruch_max'] > 0) $constraints[] = $query->lessThan('gesamtanspruch', $filter['gesamtanspruch_max']);
-        If ($filter['schoenheit_min'] > 0) $constraints[] = $query->greaterThan('schoenheit', $filter['schoenheit_min']);
-        If ($filter['gschoenheit_max'] > 0) $constraints[] = $query->lessThan('schoenheit', $filter['schoenheit_max']);
-        If ($filter['beliebtheit_min'] > 0) $constraints[] = $query->greaterThan('beliebtheit', $filter['beliebtheit_min']);
-        If ($filter['beliebtheit_max'] > 0) $constraints[] = $query->lessThan('beliebtheit', $filter['beliebtheit_max']);
-        If ($filter['skitechnischebewertung'] != '') $constraints[] = $query->equals('skitechnischebewertung', $filter['skitechnischebewertung']);
+        If ($filter['hoehenmeter_min'] > 0) $constraints[] = $query->greaterThanOrEqual('hoehenmeter', $filter['hoehenmeter_min']);
+        If ($filter['hoehenmeter_max'] > 0) $constraints[] = $query->lessThanOrEqual('hoehenmeter', $filter['hoehenmeter_max']);
+        If ($filter['lawinengefahr_min'] > 0) $constraints[] = $query->greaterThanOrEqual('lawinengefahr', $filter['lawinengefahr_min']);
+        If ($filter['lawinengefahr_max'] > 0) $constraints[] = $query->lessThanOrEqual('lawinengefahr', $filter['lawinengefahr_max']);
+        If ($filter['gesamtanspruch_min'] > 0) $constraints[] = $query->greaterThanOrEqual('gesamtanspruch', $filter['gesamtanspruch_min']);
+        If ($filter['gesamtanspruch_max'] > 0) $constraints[] = $query->lessThanOrEqual('gesamtanspruch', $filter['gesamtanspruch_max']);
+        If ($filter['schoenheit_min'] > 0) $constraints[] = $query->greaterThanOrEqual('schoenheit', $filter['schoenheit_min']);
+        If ($filter['gschoenheit_max'] > 0) $constraints[] = $query->lessThanOrEqual('schoenheit', $filter['schoenheit_max']);
+        If ($filter['beliebtheit_min'] > 0) $constraints[] = $query->greaterThanOrEqual('beliebtheit', $filter['beliebtheit_min']);
+        If ($filter['beliebtheit_max'] > 0) $constraints[] = $query->lessThanOrEqual('beliebtheit', $filter['beliebtheit_max']);
+        If ($filter['skitechnischebewertung'] <> '') $constraints[] = $query->like('skitechnischebewertung', $filter['skitechnischebewertung']);
 
 
 
