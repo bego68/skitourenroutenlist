@@ -30,6 +30,9 @@ class RouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $query = $this->createQuery();
         $constraints[] =  $query->greaterThan('uid',0);
         If ($filter['hoehenmeter_min'] > 0) $constraints[] = $query->greaterThan('hoehenmeter', $filter['hoehenmeter_min']);
+        If ($filter['hoehenmeter_max'] > 0) $constraints[] = $query->smallerThan('hoehenmeter', $filter['hoehenmeter_max']);
+
+
         $result = $query->matching( $query->logicalAnd(  $constraints )  )->execute();
         return $result;
     }
