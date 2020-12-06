@@ -34,7 +34,7 @@ class RouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $routes = $this->routeRepository->findAll();
+        $routes = $this->routeRepository->findAllFilter($this->settings['routes']['filter']);
         $this->view->assign('routes', $routes);
     }
 }

@@ -18,4 +18,19 @@ namespace Golf\Skitourenroutenlist\Domain\Repository;
  */
 class RouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * holt die Maps aus der Db nach Filter
+     *
+     * @param array $filter
+     *
+     * @return void
+     */
+    public function findAllFilter( $filter = array()){
+        //print_r($filter);
+        $query = $this->createQuery();
+        $constraints[] =  $query->greaterThan('uid',0);
+        If ($filter['hoehenmeter_min'] > 0) $constraints[] = $query->greaterThan('hoehenmeter', $filter['hoehenmeter_min']);
+        $result = $query->matching( $query->logicalAnd(  $constraints )  )->execute();
+        return $result;
+    }
 }

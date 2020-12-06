@@ -18,7 +18,7 @@ namespace Golf\Skitourenroutenlist\Domain\Repository;
  */
 class MapsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-/**
+    /**
 	 * holt die Maps aus der Db nach Filter
 	 * 
 	 * @param array $filter 
