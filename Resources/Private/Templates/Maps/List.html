@@ -39,11 +39,11 @@
 			<f:for each="{mapss}" as="maps">
 				<tr>
 					<td>{maps.kartenreihe}</td>
-					<td>{maps.kartennummer}</td>
+					<td class="text-center">{maps.kartennummer}.</td>
 					<td>{maps.name}</td>
 					<td>{maps.typ}</td>
-					<td>{maps.massstab}</td>
-					<td><f:format.currency>{maps.preis}</f:format.currency>€</td>
+					<td class="text-center">{maps.massstab}</td>
+					<td class="text-center"><f:format.currency>{maps.preis}</f:format.currency>€</td>
 					<td>{maps.link}|||bestellen</td>
 				</tr>
 			</f:for>
