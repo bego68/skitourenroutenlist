@@ -13,35 +13,48 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-
-
-		<f:flashMessages />
-
 		<table id="routen-list"  class="tx_skitourenroutenlist" >
 		   <thead>
 			<tr>
 				<th data-column-id="routenname" ><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
-				<th data-column-id="lawinengefahr" align="center" title="<f:translate key='tx_skitourenroutenlist_domain_model_route.lawinengefahr' />">LG</th>
-				<th data-column-id="gesamtanspruch" ><f:translate key="tx_skitourenroutenlist_domain_model_route.gesamtanspruch" /></th>
-				<th  data-column-id="skitechnischebewertung" ><f:translate key="tx_skitourenroutenlist_domain_model_route.skitechnischebewertung" /></th>
-				<th  data-column-id="hoehenmeter" data-type="numeric" ><f:translate key="tx_skitourenroutenlist_domain_model_route.hoehenmeter" /></th>
-				<th data-column-id="gehzeit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.gehzeit" /></th>
-				<th data-column-id="schoenheit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.schoenheit" /></th>
-				<th data-column-id="beliebtheit" ><f:translate key="tx_skitourenroutenlist_domain_model_route.beliebtheit" /></th>
-				<th data-column-id="hangexposition"><f:translate key="tx_skitourenroutenlist_domain_model_route.hangexposition" /></th>
+
+				<th data-column-id="gesamtanspruch" align="center" >Anspruch</th>
+				<th  data-column-id="skitechnischebewertung" >Ski</th>
+				<th  data-column-id="hoehenmeter" data-type="numeric" >HM</th>
+				<th data-column-id="gehzeit" >Zeit</th>
+				<th data-column-id="schoenheit" >Sterne</th>
+				<th data-column-id="beliebtheit" >Frequenz</th>
+				<th data-column-id="hangexposition">Exposition</th>
+				<th data-column-id="lawinengefahr">LG</th>
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
 				<tr onclick='window.open("<f:link.uri action=\"show\" arguments=\"{route : route}\"> </f:link.uri>")' >
-					<td class="text-left">{route.routenname}</td>
-					<td class="text-center"> {route.lawinengefahr}</td>
-					<td class="text-center"> {route.gesamtanspruch}</td>
-					<td class="text-center"> {route.skitechnischebewertung}</td>
-					<td class="text-center"> {route.hoehenmeter}</td>
-					<td class="text-center"> {route.gehzeit}</td>
-					<td class="text-center"> {route.schoenheit}</td>
-					<td class="text-center"> {route.beliebtheit}</td>
-					<td class="text-center">{route.hangexposition}</td>
+					<td>
+					  <span>{route.routenname}</span>
+					</td>
+
+					<td>
+						<f:switch expression="{route.gesamtanspruch}">
+                   			<f:case value="10">1</f:case>
+                   			<f:case value="15">1-2</f:case>
+                   			<f:case value="20">2</f:case>
+                   			<f:case value="25">2-3</f:case>
+                   			<f:case value="30">3</f:case>
+                   			<f:case value="35">3-4</f:case>
+                   			<f:case value="40">4</f:case>
+                   			<f:case value="45">4-5</f:case>
+                   			<f:case value="50">5</f:case>
+	        			</f:switch>
+					</td>
+					<td>{route.skitechnischebewertung}</td>
+					<td>{route.hoehenmeter}</td>
+					<td>{route.gehzeit}</td>
+					<td>{route.schoenheit}</td>
+					<td>{route.beliebtheit}</td>
+					<td>{route.hangexposition}</td>
+					<td>{route.lawinengefahr}</td>
+					<td>{route.lawinengefahr}</td>
 				</tr>
 			</f:for>
 		</table>
