@@ -29,7 +29,7 @@
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
-				<tr onclick='window.open("<f:link.uri action=\"show\" arguments=\"{route : route}\"> </f:link.uri>")' >
+				<tr onclick='window.open("<f:uri.action action=\"show\" arguments=\"{route : route}\"> </f:uri.action>")' >
 					<td>
 					  <span>{route.routenname}</span>
 					</td>
