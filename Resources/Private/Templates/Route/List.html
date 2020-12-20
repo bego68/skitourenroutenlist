@@ -16,7 +16,7 @@
 		<table id="routen-list"  class="tx_skitourenroutenlist" >
 		   <thead>
 			<tr>
-				<th data-column-id="routenname" ><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
+				<th data-column-id="routenname" data-formatter="routenname"><f:translate key="tx_skitourenroutenlist_domain_model_route.routenname" /></th>
 
 				<th data-column-id="gesamtanspruch" align="center" >Anspruch</th>
 				<th  data-column-id="skitechnischebewertung" >Ski</th>
@@ -29,9 +29,9 @@
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
-				<tr onclick='window.open("<f:uri.action extensionName=\"skitourenrouten\" action=\"show\" arguments=\"{route : route}\" />")' >
+				<tr>
 					<td>
-					  <span>{route.routenname}</span>
+					  <span><f:uri.action extensionName="skitourenrouten" action="show" arguments="{route : route}" />|||{route.routenname}</span>
 					</td>
 
 					<td>
@@ -67,6 +67,14 @@
 					for (var schoenheit in row) {
 						if (row.hasOwnProperty(schoenheit)) {
 							return '<span class="stern_ski stern' + row.schoenheit + '_ski">';
+						}
+					}
+				},
+				"routenname": function (column, row){
+					for (var shop in row) {
+						if (row.hasOwnProperty(routenname)) {
+							var str = row.routenname.split("|||");
+							return "<a target=\"_blank\" href=\" " + str[0] + "\" >" + str[1] + " </a>";
 						}
 					}
 				}
