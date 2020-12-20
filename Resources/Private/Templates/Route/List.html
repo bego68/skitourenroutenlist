@@ -32,22 +32,33 @@
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
-				<tr>
-					<td class="text-left"><f:link.action action="show" arguments="{route : route}"> {route.routenname}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.lawinengefahr}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.gesamtanspruch}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.skitechnischebewertung}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.hoehenmeter}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.gehzeit}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.schoenheit}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.beliebtheit}</f:link.action></td>
-					<td class="text-center"><f:link.action action="show" arguments="{route : route}"> {route.hangexposition}</f:link.action></td>
+				<tr onclick='window.open("<f:link.uri action=\"show\" arguments=\"{route : route}\"> </f:link.uri>")' >
+					<td class="text-left">{route.routenname}</td>
+					<td class="text-center"> {route.lawinengefahr}</td>
+					<td class="text-center"> {route.gesamtanspruch}</td>
+					<td class="text-center"> {route.skitechnischebewertung}</td>
+					<td class="text-center"> {route.hoehenmeter}</td>
+					<td class="text-center"> {route.gehzeit}</td>
+					<td class="text-center"> {route.schoenheit}</td>
+					<td class="text-center"> {route.beliebtheit}</td>
+					<td class="text-center">{route.hangexposition}</td>
 				</tr>
 			</f:for>
 		</table>
 <script>
 	$(function() {
-		$("#routen-list").bootgrid();
+		$("#routen-list").bootgrid({
+			rowCount:[50,150,-1],
+			formatters: {
+				"schoenheit": function (column, row){
+					for (var schoenheit in row) {
+						if (row.hasOwnProperty(schoenheit)) {
+							return '<span class="stern_ski stern" + row.schoenheit + "_ski">';
+						}
+					}
+				}
+			}
+		});
 		$("#routen-list").bootgrid("search",'');
 
 	});
