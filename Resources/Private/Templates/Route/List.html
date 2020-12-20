@@ -54,7 +54,6 @@
 					<td>{route.beliebtheit}</td>
 					<td>{route.hangexposition}</td>
 					<td>{route.lawinengefahr}</td>
-					<td>{route.lawinengefahr}</td>
 				</tr>
 			</f:for>
 		</table>
@@ -80,7 +79,7 @@
 				"lawinengefahr": function (column, row){
 					for (var lawinengefahr in row) {
 						if (row.hasOwnProperty(lawinengefahr)) {
-							return '<span class="lawinengefahr lawinengefahr' + row.schoenheit + '">';
+							return '<span class="lawinengefahr lawinengefahr' + (row.schoenheit * 10).toString() + '">';
 						}
 					}
 				},
