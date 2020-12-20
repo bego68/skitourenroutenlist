@@ -71,7 +71,7 @@
 					}
 				},
 				"routenname": function (column, row){
-					for (var shop in row) {
+					for (var routenname in row) {
 						if (row.hasOwnProperty(routenname)) {
 							var str = row.routenname.split("|||");
 							return "<a target=\"_blank\" href=\" " + str[0] + "\" >" + str[1] + " </a>";
