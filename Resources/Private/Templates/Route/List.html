@@ -23,9 +23,9 @@
 				<th  data-column-id="hoehenmeter" data-type="numeric" >HM</th>
 				<th data-column-id="gehzeit" >Zeit</th>
 				<th data-column-id="schoenheit" data-formatter="schoenheit">Sterne</th>
-				<th data-column-id="beliebtheit" >Frequenz</th>
+				<th data-column-id="beliebtheit" data-formatter="beliebtheit">Frequenz</th>
 				<th data-column-id="hangexposition">Exposition</th>
-				<th data-column-id="lawinengefahr">LG</th>
+				<th data-column-id="lawinengefahr" data-formatter="lawinengefahr">LG</th>
 			</tr>
 		 </thead>
 			<f:for each="{routes}" as="route">
@@ -67,6 +67,20 @@
 					for (var schoenheit in row) {
 						if (row.hasOwnProperty(schoenheit)) {
 							return '<span class="stern_ski stern' + row.schoenheit + '_ski">';
+						}
+					}
+				},
+				"beliebtheit": function (column, row){
+					for (var beliebtheit in row) {
+						if (row.hasOwnProperty(beliebtheit)) {
+							return '<span class="frequenz_ski frequenz' + row.schoenheit + '_ski">';
+						}
+					}
+				},
+				"lawinengefahr": function (column, row){
+					for (var lawinengefahr in row) {
+						if (row.hasOwnProperty(lawinengefahr)) {
+							return '<span class="lawinengefahr lawinengefahr' + row.schoenheit>';
 						}
 					}
 				},
