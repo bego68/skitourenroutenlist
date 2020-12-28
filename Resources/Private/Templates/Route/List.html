@@ -79,7 +79,7 @@
 				"lawinengefahr": function (column, row){
 					for (var lawinengefahr in row) {
 						if (row.hasOwnProperty(lawinengefahr)) {
-							return '<span class="lawinengefahr lawinengefahr' + (row.lawinengefahr * 10).toString() + '">';
+							return '<span class="lawinengefahr lawinengefahr' + (row.lawinengefahr).toString() + '">';
 						}
 					}
 				},
