@@ -23,7 +23,7 @@ class RouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * routeRepository
      * 
      * @var \Golf\Skitourenroutenlist\Domain\Repository\RouteRepository
-     * @inject
+     * @TYPO3\\CMS\\Extbase\\Annotation\\Inject
      */
     protected $routeRepository = null;
 

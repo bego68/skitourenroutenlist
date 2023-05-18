@@ -23,7 +23,7 @@ class MapsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * mapsRepository
      * 
      * @var \Golf\Skitourenroutenlist\Domain\Repository\MapsRepository
-     * @inject
+     * @TYPO3\\CMS\\Extbase\\Annotation\\Inject
      */
     protected $mapsRepository = null;
 
