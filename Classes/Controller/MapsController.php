@@ -16,14 +16,17 @@ namespace Golf\Skitourenroutenlist\Controller;
 /**
  * MapsController
  */
+use TYPO3\CMS\Extbase\Annotation\Inject;
+
 class MapsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+	
 {
 
     /**
      * mapsRepository
      * 
      * @var \Golf\Skitourenroutenlist\Domain\Repository\MapsRepository
-     * @TYPO3\\CMS\\Extbase\\Annotation\\Inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $mapsRepository = null;
 
