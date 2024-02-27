@@ -9,7 +9,7 @@ namespace Golf\Skitourenroutenlist\Controller;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2019 Hubertus Golf <info@berti-golf.de>, Volleyballserver
+ *  (c) 2019-2024 Hubertus Golf <info@berti-golf.de>, Volleyballserver
  *           Markus Stadler <mail@stadler-markus.de>
  *
  ***/
@@ -17,10 +17,9 @@ namespace Golf\Skitourenroutenlist\Controller;
  * MapsController
  */
 use TYPO3\CMS\Extbase\Annotation\Inject;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-class MapsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
-	
-{
+class MapsController extends ActionController{
 
     /**
      * mapsRepository

@@ -13,11 +13,12 @@ namespace Golf\Skitourenroutenlist\Domain\Model;
  *           Markus Stadler <mail@stadler-markus.de>
  *
  ***/
+
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /**
  * Maps
  */
-class Maps extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
-{
+class Maps extends AbstractEntity{
 
     /**
      * name

@@ -13,17 +13,19 @@ namespace Golf\Skitourenroutenlist\Controller;
  *           Markus Stadler <mail@stadler-markus.de>
  *
  ***/
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Annotation\Inject;
 /**
  * RouteController
  */
-class RouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class RouteController extends ActionController
 {
 
     /**
      * routeRepository
      * 
      * @var \Golf\Skitourenroutenlist\Domain\Repository\RouteRepository
-     * @TYPO3\\CMS\\Extbase\\Annotation\\Inject
+     * @Inject
      */
     protected $routeRepository = null;
 
