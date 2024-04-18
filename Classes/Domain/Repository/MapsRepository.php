@@ -34,7 +34,7 @@ class MapsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		If ($filter['typ'] != 'Typ')$constraints[] = $query->equals('typ', $filter['typ'] );
                 If ($filter['kartenreihe'] != 'Kartenreihe')$constraints[] = $query->like('kartenreihe', $filter['kartenreihe'] );
 		//$query->setOrderings(array( $route_sort_field => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));   
-		$result = $query->matching( $query->logicalAnd(  $constraints )  )->execute();
+		$result = $query->matching( $query->logicalAnd( ...array_values( $constraints) )  )->execute();
 		return $result;
 	}
 }

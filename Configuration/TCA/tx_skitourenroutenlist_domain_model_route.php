@@ -5,7 +5,6 @@ return [
         'label' => 'routenname',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -19,9 +18,7 @@ return [
         'searchFields' => 'routenname,skitechnischebewertung,gehzeit,hangexposition,mountainregion_name,mountain_name',
         'iconfile' => 'EXT:skitourenroutenlist/Resources/Public/Icons/tx_skitourenroutenlist_domain_model_route.gif'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, routenname, lawinengefahr, gesamtanspruch, skitechnischebewertung, hoehenmeter, gehzeit, schoenheit, beliebtheit, hangexposition, mountainregion_name, mountain_name, mountain_height, mountain_latitude, mountain_longitude',
-    ],
+    'interface' => [],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, routenname, lawinengefahr, gesamtanspruch, skitechnischebewertung, hoehenmeter, gehzeit, schoenheit, beliebtheit, hangexposition, mountainregion_name, mountain_name, mountain_height, mountain_latitude, mountain_longitude, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
@@ -30,32 +27,7 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ]
-                ],
-                'default' => 0,
-            ],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'default' => 0,
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_skitourenroutenlist_domain_model_route',
-                'foreign_table_where' => 'AND {#tx_skitourenroutenlist_domain_model_route}.{#pid}=###CURRENT_PID### AND {#tx_skitourenroutenlist_domain_model_route}.{#sys_language_uid} IN (-1,0)',
+                'type' => 'language',
             ],
         ],
         'l10n_diffsource' => [
@@ -71,18 +43,16 @@ return [
                 'max' => 255,
             ],
         ],
+         
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
+                'default' => 0,
                 'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                    ['label' => '', 'value' => '']
                 ],
             ],
         ],
@@ -90,30 +60,29 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
-            ],
+				'type' => 'datetime',
+         		'format' => 'date',
+				'size' => 13,
+				'checkbox' => 0,
+				'default' => 0,
+				'range' => [
+					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+				],
+			],
         ],
         'endtime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
-            ],
+				'type' => 'datetime',
+         		'format' => 'date',
+				'size' => 13,
+				'checkbox' => 0,
+				'default' => 0,
+				'range' => [
+					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
+				],
+			],
         ],
 
         'routenname' => [
@@ -128,20 +97,18 @@ return [
         'lawinengefahr' => [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.lawinengefahr',
-            'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+           'config' => [
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'gesamtanspruch' => [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.gesamtanspruch',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'skitechnischebewertung' => [
             'exclude' => true,
@@ -156,10 +123,9 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.hoehenmeter',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'gehzeit' => [
             'exclude' => true,
@@ -174,19 +140,17 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.schoenheit',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'beliebtheit' => [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.beliebtheit',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'hangexposition' => [
             'exclude' => true,
@@ -219,28 +183,25 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.mountain_height',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ]
+				'type' => 'number',
+				'size' => 4,
+			],
         ],
         'mountain_latitude' => [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.mountain_latitude',
             'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'double2'
-            ]
+				'type' => 'number',
+				'format' => 'decimal'
+			 ]
         ],
         'mountain_longitude' => [
             'exclude' => true,
             'label' => 'LLL:EXT:skitourenroutenlist/Resources/Private/Language/locallang_db.xlf:tx_skitourenroutenlist_domain_model_route.mountain_longitude',
             'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'double2'
-            ]
+				'type' => 'number',
+				'format' => 'decimal'
+			 ]
         ],
     
     ],

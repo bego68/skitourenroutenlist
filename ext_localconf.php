@@ -9,26 +9,20 @@ call_user_func(
             'Skitourenroutenlist',
             'Skitourenlist',
             [
-                'Route' => 'list'
+				\Golf\Skitourenroutenlist\Controller\RouteController::class => 'list'
             ],
             // non-cacheable actions
-            [
-                'Route' => '',
-                'Maps' => ''
-            ]
+            []
         );
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'Skitourenroutenlist',
             'Skitourenkarten',
             [
-                'Maps' => 'list'
+				\Golf\Skitourenroutenlist\Controller\MapsController::class => 'list'
             ],
             // non-cacheable actions
-            [
-                'Route' => '',
-                'Maps' => ''
-            ]
+            []
         );
 
     // wizards

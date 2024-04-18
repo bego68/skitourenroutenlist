@@ -16,28 +16,41 @@ namespace Golf\Skitourenroutenlist\Controller;
 /**
  * MapsController
  */
-use TYPO3\CMS\Extbase\Annotation\Inject;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Golf\Skitourenroutenlist\Domain\Repository\MapsRepository;
+use Psr\Http\Message\ResponseInterface;
 
 class MapsController extends ActionController{
 
     /**
      * mapsRepository
      * 
-     * @var \Golf\Skitourenroutenlist\Domain\Repository\MapsRepository
-     * @TYPO3\CMS\Extbase\Annotation\Inject
+     * @var MapsRepository
      */
-    protected $mapsRepository = null;
+    protected MapsRepository $mapsRepository;
+	
+		
+  /**
+	 * injectMapsRepository
+	 *
+	 * @param MapsRepository $mapsRepository
+	 * @return void
+	 */
+	public function injectMapsRepository(MapsRepository $mapsRepository) {
+		$this->mapsRepository = $mapsRepository;
+	}
 
+  
     /**
      * action list
      * 
-     * @return void
+     * @return ResponseInterface
      */
-    public function listAction()
+    public function listAction():ResponseInterface
     {
         $maps = $this->mapsRepository->findAllFilter($this->settings['maps']['filter']);
         //print_r($this->settings);
         $this->view->assign('mapss', $maps);
+		 return $this->htmlResponse();
     }
 }
