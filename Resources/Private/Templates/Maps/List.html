@@ -2,37 +2,38 @@
 	<f:layout name="Default" />
 	<f:section name="content">
 
-	<script type="text/javascript">
-	$(function() {
-		$("#map-table").bootgrid({
-		        rowCount:[50,150,-1],
-		 	formatters: {
-		 		"shop": function (column, row){
-		 			for (var shop in row) {
-		 				if (row.hasOwnProperty(shop)) {
-		 					var str =
-		 					row.shop.split("|||");
-		 						return "<a target=\"_blank\" href=\" " + str[0] + "\" >" + str[1] + " </a>";
+		<script type="text/javascript">
+		$(function() {
+			$("#map-table").bootgrid({
+				rowCount:[25],
+				rowSelect: true,
+				navigation: 3,
+				columnSelection: false,
+				caseSensitive: false,
+				formatters: {
+					"name": function (column, row){
+						for (var name in row) {
+							if (row.hasOwnProperty(name)) {
+								var str = row.name.split("|||");
+									return "<a target=\"_blank\" href=\" " + str[0] + "\" >" + str[1] + " </a>";
+							}
 						}
 					}
-				}
-			}
-		});
-		$("#map-table1").bootgrid("search",'');
-	 });
+				},
+			});
+			$("#map-table").bootgrid("search",'');
+		 });
 
-</script>             
+	</script>    
 		<table id="map-table" class="tx_skitourenroutenlist table table-condensed table-hover table-striped" >
 		    <thead>
 			<tr>
-				<th data-column-id="kartenreihe"><f:translate key="tx_skitourenroutenlist_domain_model_maps.kartenreihe" /></th>
+				<th data-column-id="kartenreihe" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.kartenreihe" /></th>
 				<th data-column-id="kartennummer"> Nr.</th>
-				<th data-column-id="name" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.name" /></th>
+				<th data-column-id="name" data-formatter="name"><f:translate key="tx_skitourenroutenlist_domain_model_maps.name" /></th>
 				<th data-column-id="typ" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.typ" /></th>
 				<th data-column-id="massstab" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.massstab" /></th>
-				<th data-column-id="preis" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.preis" /></th>
-                <th data-column-id="shop" data-formatter="shop">Shop</th>
-
+		      
 			</tr>
                      </thead>
                      <tbody>
@@ -40,15 +41,12 @@
 				<tr>
 					<td>{maps.kartenreihe}</td>
 					<td class="text-center">{maps.kartennummer}</td>
-					<td>{maps.name}</td>
+					<td>{maps.link}|||{maps.name}</td>
 					<td>{maps.typ}</td>
 					<td class="text-center">{maps.massstab}</td>
-					<td class="text-center"><f:format.currency>{maps.preis}</f:format.currency>€</td>
-					<td><f:link.external uri="{maps.link}">bestellen</f:link.external></td>
 				</tr>
 			</f:for>
 		    </tbody>
 		</table>
-
 	</f:section>
 </html>

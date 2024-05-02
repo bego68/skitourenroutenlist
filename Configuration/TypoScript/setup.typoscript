@@ -1,4 +1,14 @@
 
+page.includeJSFooterlibs {
+    file_bg01 = EXT:skitourenroutenlist/Resources/Public/Js/jquery.bootgrid.min.js
+    file_bg01{
+        async = 1
+        external = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
+    }
+}
+
 plugin.{extension.shortExtensionKey}_{plugin.key} {
     view {
         templateRootPaths.0 = EXT:{extension.shortExtensionKey}/Resources/Private/Templates/
