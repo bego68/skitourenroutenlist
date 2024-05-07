@@ -25,7 +25,7 @@
 		 });
 
 	</script>    
-		<table id="map-table" class="tx_skitourenroutenlist table table-condensed table-hover table-striped" >
+		<table id="map-table" class="tx_skitourenroutenlist table table-condensed table-hover table-responsive table-striped" >
 		    <thead>
 			<tr>
 				<th data-column-id="kartenreihe" ><f:translate key="tx_skitourenroutenlist_domain_model_maps.kartenreihe" /></th>
@@ -40,10 +40,10 @@
 			<f:for each="{mapss}" as="maps">
 				<tr>
 					<td>{maps.kartenreihe}</td>
-					<td class="text-center">{maps.kartennummer}</td>
+					<td>{maps.kartennummer}</td>
 					<td>{maps.link}|||{maps.name}</td>
-					<td>{maps.typ}</td>
-					<td class="text-center">{maps.massstab}</td>
+					<td> {maps.typ}</td>
+					<td>{maps.massstab}</td>
 				</tr>
 			</f:for>
 		    </tbody>
