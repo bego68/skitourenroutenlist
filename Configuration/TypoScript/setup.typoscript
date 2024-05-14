@@ -1,9 +1,14 @@
-page.includeJSFooter {
 
-    jquery-bootgrid = https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.js
-    jquery-bootgrid.external = 1
-    jquery-bootgrid.integrity = sha256-u/DZtNLWZSvkNdIL4PTQzEJUAFLzM758asxZnhd+5R4=
+page.includeJSFooterlibs {
+    file_bg01 = EXT:skitourenroutenlist/Resources/Public/Js/jquery.bootgrid.min.js
+    file_bg01{
+        async = 1
+        external = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
+    }
 }
+
 plugin.{extension.shortExtensionKey}_{plugin.key} {
     view {
         templateRootPaths.0 = EXT:{extension.shortExtensionKey}/Resources/Private/Templates/
@@ -54,39 +59,7 @@ plugin.{extension.shortExtensionKey}_{plugin.key} {
     }
 }
 
-# these classes are only used in auto-generated templates
-plugin.tx_skitourenroutenlist._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
 
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    .tx-skitourenroutenlist table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-skitourenroutenlist table th {
-        font-weight:bold;
-    }
-
-    .tx-skitourenroutenlist table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
 #Filter für Maps
 plugin.tx_skitourenroutenlist.settings.maps.filter {
   verlag = Verlag

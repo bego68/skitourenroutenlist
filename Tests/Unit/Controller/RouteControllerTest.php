@@ -45,7 +45,7 @@ class RouteControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         $routeRepository->expects(self::once())->method('findAll')->will(self::returnValue($allRoutes));
         $this->inject($this->subject, 'routeRepository', $routeRepository);
 
-        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
+        $view = $this->getMockBuilder(TYPO3Fluid\Fluid\View\ViewInterface::class)->getMock();
         $view->expects(self::once())->method('assign')->with('routes', $allRoutes);
         $this->inject($this->subject, 'view', $view);
 
